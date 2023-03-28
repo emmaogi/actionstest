@@ -1,0 +1,13 @@
+name: terraform-stuff
+on: push
+jobs:
+  run-terraform-stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: echo multi-line
+        run: |
+          pwd
+          node -v
+          ls -a
