@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
-      - name: echo multi-line
-        run: |
-          pwd
-          node -v
-          ls -a
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform-version: 1.1.9
+      - name: terraform init
+        run: terraform init
